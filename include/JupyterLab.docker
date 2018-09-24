@@ -1,0 +1,29 @@
+FROM <PARENT>
+
+ARG JUPYTER_TOKEN=84a471ab58d5dbe8c23455b5b6a92f143cc871b1674a5457d83cbb377d06b18c
+
+USER root
+ENV TINI_VERSION v0.18.0
+
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /tini
+ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini.asc /tini.asc
+#RUN gpg --keyserver hkp://pool.sks-keyservers.net:80 --recv-keys 595E85A6B1B4779EA4DAAEC70B588DFF0527A9B7 \
+#    && gpg --verify /tmp/tini.asc
+RUN chmod +x /tini && ln -s /tini /bin/tini
+
+# Install jupyterlab and base packages
+USER $NB_USER
+RUN pip3 install \
+    jupyterlab==0.34.12 \
+    numpy==1.15.1 \
+    pandas==0.23.4 \
+    matplotlib==3.0.0
+
+# TODO adjust this to the actual jupyter_core location created by pip
+RUN set -xe \
+    && echo 'c.Completer.use_jedi = True' >>/home/datascience/.local/lib/python3.6/site-packages/jupyter_core/tests/dotipython/profile_default/ipython_config.py
+
+# Make port 8888 available to the world outside this containerENTRYPOINT ["tini", "-g", "--"]
+ENTRYPOINT ["tini", "-g", "--"]
+EXPOSE 8888
+CMD jupyter lab --ip=* --port=8888 --no-browser --notebook-dir=/home/$NB_USER --allow-root --NotebookApp.token=${JUPYTER_TOKEN}

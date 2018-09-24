@@ -1,0 +1,10 @@
+FROM <PARENT>
+
+# IRuby kernel and Ruby gems
+USER root
+WORKDIR /tmp
+RUN gem install cztop iruby rbczmq -- --with-system-libs
+
+USER $NB_USER
+WORKDIR $HOME
+RUN iruby register --force

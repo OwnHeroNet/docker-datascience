@@ -1,0 +1,23 @@
+FROM <PARENT>
+
+USER root
+WORKDIR /tmp
+
+ENV IELIXIR_VERSION=0.9.13
+ENV IELIXIR_DOWNLOAD_SHA256=c466958c19b8f64ed80fe544196fab0dba3279da23c5bf775460ce13067a0626 \
+    IELIXIR_DOWNLOAD_URL=https://github.com/pprzetacznik/IElixir/archive/${IELIXIR_VERSION}.tar.gz
+
+RUN set -xe && \
+    mkdir -p /opt/ielixir-${IELIXIR_VERSION} && \
+    curl -fSL -o ielixir-${IELIXIR_VERSION}.tar.gz ${IELIXIR_DOWNLOAD_URL} && \
+    echo "${IELIXIR_DOWNLOAD_SHA256} *ielixir-${IELIXIR_VERSION}.tar.gz" | sha256sum -c - && \
+    tar -xzf ielixir-${IELIXIR_VERSION}.tar.gz -C /opt/ielixir-${IELIXIR_VERSION} --strip-components=1 && \
+    rm /tmp/ielixir-${IELIXIR_VERSION}.tar.gz && \
+    cd /opt/ielixir-${IELIXIR_VERSION} && \
+    sed -i -e 's#^ *elixir: ".*#     elixir: ">= 1.1.0",#g' mix.exs && \
+    sed -i -e "s#^ *\"display_name\": \".*#   \"display_name\": \"Elixir ${ELIXIR_VERSION}\",#g" install_script.sh && \
+    mix local.hex --force && \
+    mix deps.get && \
+    mix local.rebar --force && \
+    mix deps.compile && \
+    ./install_script.sh 

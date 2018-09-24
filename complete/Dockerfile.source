@@ -1,0 +1,19 @@
+FROM nicbet/datascience-jupyter
+
+LABEL maintainers="Sascha Just <sascha.just@own-hero.net>,Nicolas Bettenburg <nicbet@gmail.com>" \
+    version="0.1" \
+    description="Image featuring all datascience packages including JupyterLab for all installed languages."
+
+# Install packages
+
+#<INCLUDE include/Elixir_packages.docker
+
+#<INCLUDE include/Go_packages.docker
+
+#<INCLUDE include/Julia_packages.docker
+
+#<INCLUDE include/Python_packages.docker
+
+#<INCLUDE include/R_packages.docker
+
+#<INCLUDE include/Ruby_packages.docker

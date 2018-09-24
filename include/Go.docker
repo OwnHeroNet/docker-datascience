@@ -1,0 +1,19 @@
+FROM <PARENT>
+
+ENV GO_VERSION=1.11
+ENV GO_DOWNLOAD_URL="https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz" \
+    GO_DOWNLOAD_SHA256=b3fcf280ff86558e0559e185b601c9eade0fd24c900b4c63cd14d1d38613e499
+
+#______________________________________________________________________________________________________
+# Install GO Language
+# https://golang.org/doc/install
+USER root
+WORKDIR /tmp
+RUN curl -fSL -o go-${GO_VERSION}.tar.gz "${GO_DOWNLOAD_URL}" \
+    && echo "${GO_DOWNLOAD_SHA256} go-${GO_VERSION}.tar.gz" | sha256sum -c - \
+    && tar -C /opt -xzf go-${GO_VERSION}.tar.gz \
+    && mv /opt/go /opt/go-${GO_VERSION} \
+    && echo "export PATH=$PATH:/opt/go-${GO_VERSION}/bin" >> /etc/profile.d/go.sh \
+    && rm -rf go-${GO_VERSION}.tar.gz \
+    && ln -s /opt/go-${GO_VERSION}/bin/go* /usr/local/bin/
+

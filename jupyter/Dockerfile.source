@@ -1,0 +1,20 @@
+FROM nicbet/datascience-shell
+
+LABEL maintainers="Sascha Just <sascha.just@own-hero.net>,Nicolas Bettenburg <nicbet@gmail.com>" \
+    version="0.1" \
+    description="Image featuring JupyterLab with corresponding kernels."
+
+#<INCLUDE include/JupyterLab
+
+#----------------------------------------
+# Install kernels
+
+#<INCLUDE include/Elixir_kernel
+
+#<INCLUDE include/Go_kernel
+
+#<INCLUDE include/Julia_kernel
+
+#<INCLUDE include/R_kernel
+
+#<INCLUDE include/Ruby_kernel

@@ -1,0 +1,7 @@
+FROM <PARENT>
+
+# Julia packages
+USER $NB_USER
+WORKDIR $HOME
+COPY ../packages/julia-packages.jl .
+RUN /usr/local/bin/julia --color=yes julia-packages.jl

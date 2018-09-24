@@ -1,0 +1,22 @@
+FROM <PARENT>
+
+ENV RUBY_VERSION=2.5.1
+ENV RUBY_DOWNLOAD_URL="http://ftp.ruby-lang.org/pub/ruby/" \
+    RUBY_DOWNLOAD_SHA256=dac81822325b79c3ba9532b048c2123357d3310b2b40024202f360251d9829b1
+
+#______________________________________________________________________________________________________
+# Ruby
+# https://gorails.com/setup/ubuntu/18.04
+USER root
+WORKDIR /tmp
+RUN wget -q "${RUBY_DOWNLOAD_URL}`echo ${RUBY_VERSION} | cut -d. -f 1,2`/ruby-${RUBY_VERSION}.tar.gz" \
+    && echo "${RUBY_DOWNLOAD_SHA256} *ruby-${RUBY_VERSION}.tar.gz" | sha256sum -c - \
+    && tar -xzvf ruby-${RUBY_VERSION}.tar.gz \
+    && cd ruby-${RUBY_VERSION}/ \
+    && ./configure \
+    && make \
+    && make install \
+    && ruby -v \
+    && gem install bundler \
+    && rm -f /tmp/ruby-${RUBY_VERSION}.tar.gz \
+    && rm -rf /tmp/ruby-${RUBY_VERSION}

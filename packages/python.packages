@@ -1,0 +1,68 @@
+# List of python packages to install in the datascience
+# docker containers.
+
+# Visualization
+bokeh==0.13.0                  # https://bokeh.pydata.org, Bokeh is an interactive visualization library that targets modern web browsers for presentation.
+graphviz==0.8.4                # https://pypi.org/projects/graphviz, This package facilitates the creation and rendering of graph descriptions in the DOT language of the Graphviz graph drawing software (master repo) from Python.
+# that's python-graphviz in conda
+matplotlib==3.0.0              # https://matplotlib.org, Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
+lightgbm==2.1.2                # https://networkx.github.io, NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
+opencv-python                  # https://github.com/skvark/opencv-python, OpenCV (Open Source Computer Vision Library)
+plotly==3.2.1                  # https://plot.ly, Plotly creates leading open source software for Web-based data visualization and analytical apps.
+pydot==1.2.4                   # https://github.com/erocarrera/pydot, Python interface to Graphviz's Dot language
+seaborn==0.9.0                 # http://seaborn.pydata.org, Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
+
+# Machine Learning
+catboost==0.10.2               # https://catboost.ai, CatBoost is an open-source gradient boosting library with categorical features support
+lightgbm==2.1.2                # https://github.com/Microsoft/LightGBM, A fast, distributed, high performance gradient boosting (GBDT, GBRT, GBM or MART) framework based on decision tree algorithms, used for ranking, classification and many other machine learning tasks.
+pybrain==0.3                   # http://pybrain.org, PyBrain is short for Python-Based Reinforcement Learning, Artificial Intelligence and Neural Network Library.
+pymc3==3.5                     # https://docs.pymc.io, PyMC3 is a Python package for Bayesian statistical modeling and Probabilistic Machine Learning focusing on advanced Markov chain Monte Carlo (MCMC) and variational inference (VI) algorithms.
+scikit-learn==0.19.2           # http://scikit-learn.github.io, Machine Learning in Python, Classification, Regression, Clustering, Dimensionality reduction, Model selection, Preprocessing.
+scipy==1.1.0                   # https://www.scipy.org, SciPy (pronounced “Sigh Pie”) is a Python-based ecosystem of open-source software for mathematics, science, and engineering.
+xgboost==0.80                  # https://github.com/dmlc/xgboost, Scalable, Portable and Distributed Gradient Boosting (GBDT, GBRT or GBM) Library.
+
+# Natural language
+gensim==3.4.0                  # https://pypi.org/project/gensim, Gensim is a Python library for topic modelling, document indexing and similarity retrieval with large corpora.
+nltk==3.2.5                    # https://www.nltk.org, Natural Language Toolkit
+spacy==2.0.12                  # https://spacy.io, Industrial-Strength Natural Language Processing
+
+# Neural networks
+keras==2.2.2                   # https://keras.io, Keras is a high-level neural networks API, written in Python and capable of running on top of TensorFlow, CNTK, or Theano.
+tensorflow==1.10.0             # https://www.tensorflow.org, An open source machine learning framework for everyone.
+
+# Data processing
+h5py==2.8.0                    # https://www.h5py.org, The h5py package is a Pythonic interface to the HDF5 binary data format.
+imbalanced-learn==0.3.3        # https://github.com/scikit-learn-contrib/imbalanced-learn, A Python Package to Tackle the Curse of Imbalanced Datasets in Machine Learning.
+numpy==1.15.1                  # http://numpy.org, NumPy is the fundamental package for scientific computing with Python.
+theano==1.0.2                  # https://github.com/Theano/Theano, Theano is a Python library that allows you to define, optimize, and evaluate mathematical expressions involving multi-dimensional arrays efficiently.
+
+# Data handling
+pandas==0.23.4                 # https://pandas.pydata.org, pandas is an open source, BSD-licensed library providing high-performance, easy-to-use data structures and data analysis tools for the Python programming language.
+
+# Data storages
+azure-storage==0.32.0          # https://github.com/Azure/azure-storage-python, Microsoft Azure Storage Library
+boto3==1.9.8                   # https://github.com/boto/boto3, AWS SDK for Python (e.g. S3)
+mysql-connector-python==2.2.3  # https://dev.mysql.com/doc/connector-python/en/, MySQL driver written in Python
+psycopg2-binary==2.7.5         # http://initd.org/psycopg, Psycopg is the most popular PostgreSQL adapter for the Python programming language.
+#pyodbc==4.0.23                # https://github.com/mkleehammer/pyodbc, Python ODBC bridge for SQL Server
+
+# Explainer
+eli5==0.8                      # https://pypi.org/project/eli5, "Explain like I'm 5" ELI5 is a Python package which helps to debug machine learning classifiers and explain their predictions.
+shap==0.24.0                   # https://github.com/slundberg/shap, A unified approach to explain the output of any machine learning model.
+
+# Export and console
+# plotly-orca==1.1.1             # https://github.com/plotly/orca, Command line application for generating static images of interactive plotly charts
+progressbar2==3.38.0           # https://github.com/WoLpH/python-progressbar, Text progress bar library for Python
+psutil==5.4.7                  # https://github.com/giampaolo/psutil, Cross-platform lib for process and system monitoring in Python
+tabulate==0.8.2                # https://bitbucket.org/astanin/python-tabulate, Pretty-print tabular data
+
+# Mining & web interaction
+requests==2.18.4               # https://github.com/requests/requests, Python HTTP Requests for Humans
+scrapy==1.5.1                  # https://scrapy.org, An open source and collaborative framework for extracting the data you need from websites.
+
+# Computer Vision
+torchvision==0.2.1             # https://github.com/pytorch/vision, The torchvision package consists of popular datasets, model architectures, and common image transformations for computer vision.
+
+# Statistics
+statsmodels==0.9.0             # http://statsmodels.org, Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration.
+

@@ -1,0 +1,19 @@
+FROM nicbet/datascience-minimal
+
+LABEL maintainers="Sascha Just <sascha.just@own-hero.net>,Nicolas Bettenburg <nicbet@gmail.com>" \
+    version="0.1" \
+    description="Image containing all programming languages to be used with a local shell."
+
+#<INCLUDE include/Python
+
+#<INCLUDE include/R
+
+#<INCLUDE include/Julia
+
+#<INCLUDE include/Go
+
+#<INCLUDE include/Elixir
+
+#<INCLUDE include/Ruby
+
+

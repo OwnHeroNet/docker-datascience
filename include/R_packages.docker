@@ -1,0 +1,9 @@
+# R libraries
+USER root
+WORKDIR /tmp
+
+RUN echo "install.packages(c('repr', 'IRdisplay', 'crayon', 'pbdZMQ'))" | R --no-save
+RUN echo 'install.packages("rstan", repos = "https://cloud.r-project.org/", dependencies=TRUE)' | R --no-save
+RUN echo 'install.packages(c("coda","mvtnorm","devtools","loo"))' | R --no-save
+RUN echo 'library(devtools)\ndevtools::install_github("rmcelreath/rethinking")' | R --no-save
+RUN echo 'install.packages("rms", repos = "https://cloud.r-project.org/", dependencies=TRUE)' | R --no-save

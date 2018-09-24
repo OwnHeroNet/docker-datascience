@@ -1,0 +1,7 @@
+FROM <PARENT>
+
+# Julia kernel
+USER $NB_USER
+WORKDIR $HOME
+COPY packages/julia-kernel.jl .
+RUN /usr/local/bin/julia --color=yes julia-kernel.jl

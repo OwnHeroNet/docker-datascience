@@ -1,0 +1,6 @@
+FROM <PLACEHOLDER>
+
+USER $NB_USER
+WORKDIR /tmp
+COPY packages/python.packages /tmp
+RUN pip3 install </tmp/python.packages

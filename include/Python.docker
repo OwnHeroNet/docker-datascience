@@ -1,0 +1,9 @@
+FROM <PARENT>
+
+#______________________________________________________________________________________________________
+# Latest version of python in bionic is 3.6.5-3
+# Python 3
+USER root
+WORKDIR /tmp
+RUN apt install -y python3-pip \
+    && pip3 install virtualenv virtualenvwrapper

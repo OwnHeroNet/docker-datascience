@@ -1,0 +1,9 @@
+FROM <PARENT>
+
+# IRkernel and R libraries
+USER root
+WORKDIR /tmp
+
+RUN echo 'install.packages("devtools")' | R --no-save
+RUN echo 'devtools::install_github("IRkernel/IRkernel")' | R --no-save
+RUN echo 'IRkernel::installspec(user = FALSE)' | R --no-save
