@@ -7,8 +7,8 @@ graphviz==0.8.4                # https://pypi.org/projects/graphviz, This packag
 # that's python-graphviz in conda
 matplotlib==3.0.0              # https://matplotlib.org, Matplotlib is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats and interactive environments across platforms.
 lightgbm==2.1.2                # https://networkx.github.io, NetworkX is a Python package for the creation, manipulation, and study of the structure, dynamics, and functions of complex networks.
-opencv-python                  # https://github.com/skvark/opencv-python, OpenCV (Open Source Computer Vision Library)
-plotly==3.2.1                  # https://plot.ly, Plotly creates leading open source software for Web-based data visualization and analytical apps.
+opencv-python==3.4.3.18        # https://github.com/skvark/opencv-python, OpenCV (Open Source Computer Vision Library)
+plotly==3.3.0                  # https://plot.ly, Plotly creates leading open source software for Web-based data visualization and analytical apps.
 pydot==1.2.4                   # https://github.com/erocarrera/pydot, Python interface to Graphviz's Dot language
 seaborn==0.9.0                 # http://seaborn.pydata.org, Seaborn is a Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics.
 
@@ -65,4 +65,3 @@ torchvision==0.2.1             # https://github.com/pytorch/vision, The torchvis
 
 # Statistics
 statsmodels==0.9.0             # http://statsmodels.org, Python module that provides classes and functions for the estimation of many different statistical models, as well as for conducting statistical tests, and statistical data exploration.
-
